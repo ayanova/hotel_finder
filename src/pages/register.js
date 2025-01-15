@@ -20,14 +20,14 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:1337/api/auth/local/register",
-        {
-          username: formData.username,
-          email: formData.email,
-          password: formData.password,
-        }
-      );
+      // API URL'sini .env dosyasından alıyoruz
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:1337";
+
+      const response = await axios.post(`${apiUrl}/api/auth/local/register`, {
+        username: formData.username,
+        email: formData.email,
+        password: formData.password,
+      });
 
       localStorage.setItem("token", response.data.jwt); // Token'ı kaydediyoruz
       setMessage(`Registration successful! Welcome, ${response.data.user.username}.`);
