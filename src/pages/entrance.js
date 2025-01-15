@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './entrance.css';
-import BackgroundImage from '../assets/entrance.png';
 
 function Entrance() {
   const navigate = useNavigate();
