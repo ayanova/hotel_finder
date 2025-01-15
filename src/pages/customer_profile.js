@@ -10,17 +10,25 @@ function CustomerProfile() {
     const token = localStorage.getItem("token");
     if (token) {
       // Kullanıcı bilgilerini al
-      fetch("http://localhost:1337/api/users/me", {
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:1337";
+
+      fetch(`${apiUrl}/api/users/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch profile information");
+          }
+          return response.json();
+        })
         .then((data) => {
           setUserInfo(data); // Kullanıcı bilgilerini kaydet
         })
         .catch((error) => {
           console.error("Error fetching profile info:", error);
+          navigate("/login"); // Profil yüklenemezse login sayfasına yönlendir
         });
     } else {
       navigate("/login"); // Token yoksa login sayfasına yönlendir
