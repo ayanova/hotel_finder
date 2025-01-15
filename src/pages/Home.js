@@ -21,7 +21,10 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/hotels?populate=*") // API çağrısı
+    // API URL'sini çevresel değişkenlerden al
+    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:1337";
+
+    fetch(`${apiUrl}/api/hotels?populate=*`) // API çağrısı
       .then((response) => response.json())
       .then((data) => {
         console.log("API Response:", data);
@@ -48,13 +51,13 @@ function Home() {
                 onClick={() => handleCardClick(hotel.id)}
               >
                 {/* Otel Adı */}
-                <h3>{hotel.name || "No Name Available"}</h3>
+                <h3>{hotel.attributes.name || "No Name Available"}</h3>
 
                 {/* Otel Fotoğrafı */}
-                {hotel.photos?.[0]?.url ? (
+                {hotel.attributes.photos?.[0]?.url ? (
                   <img
-                    src={`http://localhost:1337${hotel.photos[0].url}`}
-                    alt={hotel.name || "Hotel Image"}
+                    src={`${process.env.REACT_APP_API_URL}${hotel.attributes.photos[0].url}`}
+                    alt={hotel.attributes.name || "Hotel Image"}
                     className="hotel-image"
                   />
                 ) : (
@@ -62,10 +65,10 @@ function Home() {
                 )}
 
                 {/* Açıklama */}
-                <p>{extractPlainText(hotel.description)}</p>
+                <p>{extractPlainText(hotel.attributes.description)}</p>
 
                 {/* Fiyat */}
-                <p>${hotel.price || "N/A"}</p>
+                <p>${hotel.attributes.price || "N/A"}</p>
               </div>
             ))
           ) : (
