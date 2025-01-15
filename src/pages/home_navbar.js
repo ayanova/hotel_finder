@@ -10,12 +10,20 @@ function HomeNavbar() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:1337/api/users/me", {
+      // API URL'sini dinamik olarak al
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:1337";
+
+      fetch(`${apiUrl}/api/users/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch user info");
+          }
+          return response.json();
+        })
         .then((data) => {
           setUsername(data.username);
         })
