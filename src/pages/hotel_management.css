@@ -1,0 +1,109 @@
+/* Genel stil */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ana kapsayıcı */
+.hotel-management-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Başlık */
+.hotel-management-container h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form stili */
+.hotel-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hotel-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.hotel-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hotel-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Liste stili */
+.hotel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hotel-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.hotel-list li strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.hotel-list li span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Buton stili */
+.hotel-list button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hotel-list button:hover {
+  background-color: #a71d2a;
+}
+
+.hotel-list .edit-btn {
+  background-color: #28a745;
+  margin-right: 5px;
+}
+
+.hotel-list .edit-btn:hover {
+  background-color: #1e7e34;
+}

@@ -1,0 +1,102 @@
+/* Genel stil */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0d0d;
+    color: white;
+  }
+  
+  /* Ana kapsayıcı */
+  .dashboard-container {
+    width: 100%;
+    max-width: 2732px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  .dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #030316;
+    padding: 20px;
+  }
+  
+  .dashboard-logo img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .dashboard-search {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .dashboard-user {
+    font-size: 16px;
+  }
+  
+  /* Main */
+  .dashboard-main {
+    background-color: #d5d5d5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .dashboard-title {
+    font-size: 24px;
+    color: #da8200;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-listings {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  /* Satır */
+  .listing-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+  
+  .listing-name {
+    flex: 1;
+    text-align: left;
+    color: black;
+  }
+  
+  /* Düğme stilleri */
+  .button {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: rgba(38, 38, 38, 0.75);
+    color: #da8200;
+    text-align: center;
+    line-height: 35px;
+  }
+  
+  .button.delete {
+    width: 120px;
+  }
+  
+  .button.view {
+    width: 120px;
+  }
+  

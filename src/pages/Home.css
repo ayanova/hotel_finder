@@ -1,0 +1,79 @@
+.trending-section {
+  margin: 30px;
+  color: #ffffff;
+}
+
+.hotel-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hotel-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.hotel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+.hotel-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.hotel-description {
+  font-size: 0.9rem;
+  margin: 10px;
+  color: #bbbbbb;
+}
+
+.hotel-price {
+  font-size: 1rem;
+  margin: 10px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.hotel-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.reservation-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reservation-button:hover {
+  background-color: #0056b3;
+}
