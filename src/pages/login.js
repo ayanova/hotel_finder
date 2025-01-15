@@ -19,7 +19,10 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:1337/api/auth/local", {
+      // API URL'sini .env dosyasından alıyoruz
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:1337";
+      
+      const response = await axios.post(`${apiUrl}/api/auth/local`, {
         identifier: formData.identifier,
         password: formData.password,
       });
